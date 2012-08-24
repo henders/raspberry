@@ -1,0 +1,16 @@
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet dhcp
+
+auto eth0:1
+iface eth0:1 inet static
+	address 192.168.1.30
+	netmask 255.255.255.0
+
+auto wlan0
+iface wlan0 inet dhcp
+	wireless-essid 2WIRE031
+	pre-up wpa_supplicant -B -Dwext -iwlan0 -c/etc/wpa_supplicant/wpa_supplicant.conf
+	post-down killall -q wpa_supplicant
