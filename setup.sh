@@ -7,6 +7,7 @@ apt-get -y install wget vim rake
 echo ipv6 >> /etc/modules
 
 # Custom interfaces file to enable dhcp on eth0 and a wirelessN USB card, with a fallback static IP for eth0
+apt-get -y install avahi-autoipd
 cp interfaces /etc/networks/interfaces
 cp wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf
 
