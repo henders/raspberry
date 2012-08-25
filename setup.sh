@@ -1,7 +1,7 @@
 apt-get -y update
 apt-get -y upgrade
 # Install vim and ruby/rake for the janus vim settings
-apt-get -y install wget vim rake
+apt-get -y install wget vim rake ruby-dev
 
 # Enable IPv6 so that a link-local address will show up on the network during headless operation
 echo ipv6 >> /etc/modules
@@ -20,3 +20,6 @@ wget http://www.memetic.org/files/xbmc.tar.gz
 tar zxvf xbmc.tar.gz
 cp -av xbmc/usr /
 cp /boot/arm128_start.elf /boot/start.elf
+
+# Install rails
+gem install rails --no-ri
